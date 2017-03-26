@@ -1,0 +1,15 @@
+
+<head>
+  <title> AnimalRescue </title>
+    <link rel="stylesheet"type="text/css"href="https://fonts.googleapis.com/css?family=Muli|Raleway">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<header class="Edit">
+<h1>Edit A Rescue</h1>
+</header>
+
+<%= render partial: "form", locals: { action_name: "edit", form_method: :get } %>
+
+<%= button_to "Confirm Edit", update_animal, method: :put %>

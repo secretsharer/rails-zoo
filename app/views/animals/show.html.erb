@@ -1,0 +1,31 @@
+
+<head>
+  <title> AnimalRescue </title>
+  <link rel="stylesheet"type="text/css"href="https://fonts.googleapis.com/css?family=Muli|Raleway">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <header class="ID">
+    <h1><%= @show_animal.name %></h1>
+    <h3><%= @show_animal.says %></h3>
+  </header>
+
+  <p>
+    <ul>
+      <li class="animal_attributes">
+        <%= @show_animal.name %>
+        <%= @show_animal.age %>
+        <%= @show_animal.species %>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <%= @show_animal.info %>
+  </p>
+
+
+  <%= button_to "Home", animals_path, method: :get %>
+
+  <%= button_to "Edit This Rescue", edit_animal_path(@show_animal.id), method: :get %>

@@ -1,0 +1,28 @@
+
+<head>
+  <title> Baby Animal Rescue! </title>
+  <link rel="stylesheet"type="text/css"href="https://fonts.googleapis.com/css?family=Muli|Raleway">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <header class="Home">
+    <h1>Baby Animal Rescue!</h1>
+  </header>
+
+  <section class="animal-list">
+    <ul>
+      <% @animals.each do |animal| %>
+      <li>
+        <%= link_to animal.name, animal_path(animal.id) %>
+        <% end %>
+    </ul>
+  </section>
+
+  <p>
+    <section class="animal-list">
+      <%= button_to "Add New Rescue", new_animal_path, method: :get %>
+    </section>
+  </p>
+
+</body>

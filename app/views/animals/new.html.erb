@@ -1,0 +1,15 @@
+
+<head>
+  <title> AnimalRescue </title>
+    <link rel="stylesheet"type="text/css"href="https://fonts.googleapis.com/css?family=Muli|Raleway">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<header class="New">
+<h1>Add a New Rescue!</h1>
+</header>
+
+<%= render partial: "form", locals: { action_name: "new", form_method: :get } %>
+
+<%= button_to "Create!", animals_path, method: :post %>
