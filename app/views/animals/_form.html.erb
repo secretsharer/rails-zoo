@@ -15,8 +15,10 @@
 <%= f.label :info %>
 <%= f.text_area :info, size: "50x10" %>
 
-<%= f.submit "Create" %>
-
-<% end %>
+<!-- <%= f.submit "Create" %> -->
+<%= f.submit "Edit" %>
+<%= f.submit "Delete" %>
 
 <%= button_to "Home", animals_path, method: :get %>
+
+<% end %>

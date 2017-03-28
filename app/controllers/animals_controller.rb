@@ -1,5 +1,10 @@
 class AnimalsController < ApplicationController
 
+  # def animal_params
+  #   # animal_params = Animal.new
+  #    { name: nil, species: nil, age: nil, says: nil, info: nil }
+  # end
+
   def index
     @animals = Animal.all
   end
@@ -10,8 +15,11 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.create animal_params
-    unless @animal.id == nil
+    if @animal.save
+      # unless @animal.id == nil
       redirect_to animals_path
+    else
+      render :new
     end
   end
 
@@ -25,16 +33,18 @@ class AnimalsController < ApplicationController
 
   def update
     animal = Animal.find(params[:id])
-    if animal.update(book_params)
-      redirect_to animal_path
+    if animal.update(animal_params)
+      animal.save
+      redirect_to animals_path
     end
   end
 
   def destroy
     animal.destroy(params[:id])
-    redirect_to animal_path
+    if animal.destroy
+      redirect_to animals_path
+    end
   end
-
 
   private
 
